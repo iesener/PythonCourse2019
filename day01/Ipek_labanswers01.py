@@ -55,28 +55,35 @@ def romanify(num):
     integer = []
     integer.append("M" * (num // 1000))
     num %= 1000
-    if num >= 500:
-        integer.append("D")
-        integer.append("C" * ((num-500)//100))
+    if  num >= 900:
+        integer.append("CM")
+    if  900 > num >= 500 :
+        integer.append("D" + "C" * ((num-500)//100))
+    if  500 > num >= 400 :
+        integer.append("CD")
+    if  400 > num :
+        integer.append("C" * (num // 100))
+    num %= 100
+    if  num >= 90:
+        integer.append("XC")
+    if  90 > num >= 50 :
+        integer.append("L" + "X" * ((num-50)//10))
+    if  50 > num >= 40 :
+        integer.append("XL")
+    if  40 > num :
+        integer.append("X" * (num // 10))
+    num %= 10
+    if  num == 9:
+        integer.append("IX")
+    if  9 > num >= 5 :
+        integer.append("V" + "I" * (num-5))
+    if  5 > num >= 4 :
+        integer.append("IV")
+    if  4 > num :
+        integer.append("I" * num)
     return(integer)
-    
-    if num == 1:
-        return("I")
-    elif num == 2:
-        return("II")
-    elif num == 3:
-        return("III")
-    elif num == 4:
-        return("IV")
-    elif num == 5:
-        return("V")    
-    elif num == 6:
-        return("VI")
-    elif num == 7:
-        return("VII")
-    
-    else:
-        return("TBD")
+
+romanify(3847)
 
   
 # Copyright (c) 2014 Matt Dickenson
