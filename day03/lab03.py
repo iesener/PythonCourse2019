@@ -11,18 +11,39 @@ import string
 
 ## make all characters capitalized
 def shout(txt):
-
+	if type(txt) != str:
+		raise TypeError("Enter an integer!")
+	else:
+		return txt.upper()
 
 ## reverse all characters in string
 def reverse(txt):
-
+	x = list(txt)
+	x.reverse()
+	if type(txt) != str:
+		raise TypeError("Enter an integer!")
+	else:
+		return ''.join(x)
 
 ## reverse word order in string
 def reversewords(txt):
+	x = txt.split()[::-1]
+	if type(txt) != str:
+		raise TypeError("Enter an integer!")
+	else:
+		return ' '.join(x)
 
 
 ## reverses letters in each word
 def reversewordletters(txt):
+	x = txt.split()
+	y =[]
+	if type(txt) != str:
+		raise TypeError("Enter an integer")
+	else:
+		for i in x:
+			i.reverse()
+			return ' '.join(i)
 
 		
 ## change text to piglatin.. google it! 
